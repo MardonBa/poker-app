@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00AEB51BE34457F3AE5393C0 /* PokerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA95C56F54939BDCCB7BCBD /* PokerApp.swift */; };
+		0E27AD9831B274A7148CB1DE /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D756B3AAAD27219C1209926A /* DMSans-Medium.ttf */; };
+		15CA3341269B11AC2D88F4F0 /* DMSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA32DF567DEA21424EA5D299 /* DMSans-SemiBold.ttf */; };
+		2865949FFF96CDECE795396F /* ActionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD283E8541D2F672518BCCE /* ActionPanelView.swift */; };
+		34F726ED5C68ADE400E81131 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73417AE250830BB71FEC0D9D /* TableView.swift */; };
+		3DFE8C52EBEB09A324B84112 /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91603DAFDF542E399DC818 /* CardPickerView.swift */; };
+		41AB30D03459A30826093B7D /* SessionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC8BD4D5B43C06E2F420C2 /* SessionModalView.swift */; };
+		635C05243724CB68C43DE49B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863614B389BA9C0343F53221 /* Card.swift */; };
+		6582959F6CB1B8F3635AE4C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E34170E6528EDE47FF05AD /* MainView.swift */; };
+		696B9973420DA5A11E24E5E2 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A4F0ED87505C56413C73A /* GameSettings.swift */; };
+		8655D44491FB3A4E0E8F304B /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD7629F65FBB520BE995931 /* Typography.swift */; };
+		A0F592390C03D3CA64C24CA4 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B04F104F0C1CE0B7D7827 /* ClaudeService.swift */; };
+		B4D8C4953D2D7926BEFDAB73 /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD1262FF9ACC0BA242752CC /* Seat.swift */; };
+		B6C462A4272EE09C0F0508B6 /* HoleCardsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468D0605DDB8EC379915DB9 /* HoleCardsRowView.swift */; };
+		C154F00508714943859569EB /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 963975592EC3542C68E826B7 /* DMSans-Regular.ttf */; };
+		D53A060769BE5C6887EF706F /* OpponentSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB841E6F3CF5ACB0E48AA /* OpponentSheetView.swift */; };
+		D5B253315460A2CAFB6C555C /* DMMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA41295047DB0600E0D49A38 /* DMMono-Regular.ttf */; };
+		DAFAFEEFE23DA42F9B7B013C /* AdviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148B24B1C75304FB852A3A1 /* AdviceState.swift */; };
+		DB8CFAA4A73505DB6B6394A8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA909F140F36BE4EBC10677 /* Colors.swift */; };
+		DBAAE24F1C60AF275A7F6804 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E869744B1FAE9B1F7D815031 /* DMSans-Bold.ttf */; };
+		DEC8FE392A3D24AD6F340AC1 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE166829342771AE41606D32 /* GameState.swift */; };
+		E470DDA4141896CA8A2F596E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9AFE7E819865954987987 /* HeaderView.swift */; };
+		EAC3AE3FCAFBA1F7BEB9EB82 /* SeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30DDF70A4738BD860DDDE34 /* SeatView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0148B24B1C75304FB852A3A1 /* AdviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceState.swift; sourceTree = "<group>"; };
+		3EA909F140F36BE4EBC10677 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5FD283E8541D2F672518BCCE /* ActionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPanelView.swift; sourceTree = "<group>"; };
+		66EDB4E3006C3DABB495DE15 /* PokerApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PokerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFC8BD4D5B43C06E2F420C2 /* SessionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModalView.swift; sourceTree = "<group>"; };
+		73417AE250830BB71FEC0D9D /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		7FD7629F65FBB520BE995931 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		863614B389BA9C0343F53221 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		963975592EC3542C68E826B7 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		9CA95C56F54939BDCCB7BCBD /* PokerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerApp.swift; sourceTree = "<group>"; };
+		A468D0605DDB8EC379915DB9 /* HoleCardsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCardsRowView.swift; sourceTree = "<group>"; };
+		AD91603DAFDF542E399DC818 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
+		B14F363BD298703CE648640A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BC3A4F0ED87505C56413C73A /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		BE166829342771AE41606D32 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		C5E34170E6528EDE47FF05AD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CA0B04F104F0C1CE0B7D7827 /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeService.swift; sourceTree = "<group>"; };
+		CA41295047DB0600E0D49A38 /* DMMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMMono-Regular.ttf"; sourceTree = "<group>"; };
+		CE8DB841E6F3CF5ACB0E48AA /* OpponentSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentSheetView.swift; sourceTree = "<group>"; };
+		D756B3AAAD27219C1209926A /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		DA32DF567DEA21424EA5D299 /* DMSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		DFD1262FF9ACC0BA242752CC /* Seat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seat.swift; sourceTree = "<group>"; };
+		E30DDF70A4738BD860DDDE34 /* SeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatView.swift; sourceTree = "<group>"; };
+		E3D9AFE7E819865954987987 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E869744B1FAE9B1F7D815031 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0C6CE0AE7567C73D13824695 /* PokerApp */ = {
+			isa = PBXGroup;
+			children = (
+				0CF5823FB0FAB3562F09F0FA /* App */,
+				9E34093124A37DC441498678 /* Models */,
+				A4657BB7B0472E12B90C3BFB /* Resources */,
+				924974301DF536F7B34B9EE3 /* Services */,
+				BD9266EE4109F586351AD665 /* State */,
+				555E7E39FB39E77209D4C564 /* Theme */,
+				7ACB354AAC5899FE5C8AE664 /* Views */,
+			);
+			path = PokerApp;
+			sourceTree = "<group>";
+		};
+		0CF5823FB0FAB3562F09F0FA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B14F363BD298703CE648640A /* Info.plist */,
+				9CA95C56F54939BDCCB7BCBD /* PokerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		555E7E39FB39E77209D4C564 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3EA909F140F36BE4EBC10677 /* Colors.swift */,
+				7FD7629F65FBB520BE995931 /* Typography.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		7ACB354AAC5899FE5C8AE664 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FD283E8541D2F672518BCCE /* ActionPanelView.swift */,
+				AD91603DAFDF542E399DC818 /* CardPickerView.swift */,
+				E3D9AFE7E819865954987987 /* HeaderView.swift */,
+				A468D0605DDB8EC379915DB9 /* HoleCardsRowView.swift */,
+				C5E34170E6528EDE47FF05AD /* MainView.swift */,
+				CE8DB841E6F3CF5ACB0E48AA /* OpponentSheetView.swift */,
+				E30DDF70A4738BD860DDDE34 /* SeatView.swift */,
+				6FFC8BD4D5B43C06E2F420C2 /* SessionModalView.swift */,
+				73417AE250830BB71FEC0D9D /* TableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89FFDACFEA25C4A2169AB5D0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA41295047DB0600E0D49A38 /* DMMono-Regular.ttf */,
+				E869744B1FAE9B1F7D815031 /* DMSans-Bold.ttf */,
+				D756B3AAAD27219C1209926A /* DMSans-Medium.ttf */,
+				963975592EC3542C68E826B7 /* DMSans-Regular.ttf */,
+				DA32DF567DEA21424EA5D299 /* DMSans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		924974301DF536F7B34B9EE3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA0B04F104F0C1CE0B7D7827 /* ClaudeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9E34093124A37DC441498678 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0148B24B1C75304FB852A3A1 /* AdviceState.swift */,
+				863614B389BA9C0343F53221 /* Card.swift */,
+				BC3A4F0ED87505C56413C73A /* GameSettings.swift */,
+				DFD1262FF9ACC0BA242752CC /* Seat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4657BB7B0472E12B90C3BFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89FFDACFEA25C4A2169AB5D0 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD9266EE4109F586351AD665 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				BE166829342771AE41606D32 /* GameState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		C48FC78CACADDA0CA31CD059 = {
+			isa = PBXGroup;
+			children = (
+				0C6CE0AE7567C73D13824695 /* PokerApp */,
+				FCC6F995FDD67B8E0483A30D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCC6F995FDD67B8E0483A30D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66EDB4E3006C3DABB495DE15 /* PokerApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E5F560DDB509A9279128DA4 /* PokerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB7BD07C14BD32FFC71CB12D /* Build configuration list for PBXNativeTarget "PokerApp" */;
+			buildPhases = (
+				31AEA9A437C5014BAEFFFBA5 /* Sources */,
+				39E19D087489FF023F814F96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PokerApp;
+			packageProductDependencies = (
+			);
+			productName = PokerApp;
+			productReference = 66EDB4E3006C3DABB495DE15 /* PokerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9335040479E53F1A5717DDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					7E5F560DDB509A9279128DA4 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 69A7D78CD499ECC96399184A /* Build configuration list for PBXProject "PokerApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C48FC78CACADDA0CA31CD059;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E5F560DDB509A9279128DA4 /* PokerApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39E19D087489FF023F814F96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B253315460A2CAFB6C555C /* DMMono-Regular.ttf in Resources */,
+				DBAAE24F1C60AF275A7F6804 /* DMSans-Bold.ttf in Resources */,
+				0E27AD9831B274A7148CB1DE /* DMSans-Medium.ttf in Resources */,
+				C154F00508714943859569EB /* DMSans-Regular.ttf in Resources */,
+				15CA3341269B11AC2D88F4F0 /* DMSans-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31AEA9A437C5014BAEFFFBA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2865949FFF96CDECE795396F /* ActionPanelView.swift in Sources */,
+				DAFAFEEFE23DA42F9B7B013C /* AdviceState.swift in Sources */,
+				635C05243724CB68C43DE49B /* Card.swift in Sources */,
+				3DFE8C52EBEB09A324B84112 /* CardPickerView.swift in Sources */,
+				A0F592390C03D3CA64C24CA4 /* ClaudeService.swift in Sources */,
+				DB8CFAA4A73505DB6B6394A8 /* Colors.swift in Sources */,
+				696B9973420DA5A11E24E5E2 /* GameSettings.swift in Sources */,
+				DEC8FE392A3D24AD6F340AC1 /* GameState.swift in Sources */,
+				E470DDA4141896CA8A2F596E /* HeaderView.swift in Sources */,
+				B6C462A4272EE09C0F0508B6 /* HoleCardsRowView.swift in Sources */,
+				6582959F6CB1B8F3635AE4C8 /* MainView.swift in Sources */,
+				D53A060769BE5C6887EF706F /* OpponentSheetView.swift in Sources */,
+				00AEB51BE34457F3AE5393C0 /* PokerApp.swift in Sources */,
+				B4D8C4953D2D7926BEFDAB73 /* Seat.swift in Sources */,
+				EAC3AE3FCAFBA1F7BEB9EB82 /* SeatView.swift in Sources */,
+				41AB30D03459A30826093B7D /* SessionModalView.swift in Sources */,
+				34F726ED5C68ADE400E81131 /* TableView.swift in Sources */,
+				8655D44491FB3A4E0E8F304B /* Typography.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		02F3D14C2813FF0C969B07A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2900D6217EF1D90DC1118F30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PokerApp/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bayanmardon.PokerApp;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3BD58E6556BB90430CFB607C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B1FDCAB372ED70D275AED979 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PokerApp/App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bayanmardon.PokerApp;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69A7D78CD499ECC96399184A /* Build configuration list for PBXProject "PokerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F3D14C2813FF0C969B07A9 /* Debug */,
+				3BD58E6556BB90430CFB607C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CB7BD07C14BD32FFC71CB12D /* Build configuration list for PBXNativeTarget "PokerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2900D6217EF1D90DC1118F30 /* Debug */,
+				B1FDCAB372ED70D275AED979 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9335040479E53F1A5717DDF /* Project object */;
+}

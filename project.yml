@@ -1,0 +1,36 @@
+name: PokerApp
+options:
+  bundleIdPrefix: com.bayanmardon
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+
+targets:
+  PokerApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: PokerApp
+        excludes:
+          - "**/*.md"
+    info:
+      path: PokerApp/App/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIAppFonts:
+          - DMSans-Regular.ttf
+          - DMSans-Medium.ttf
+          - DMSans-SemiBold.ttf
+          - DMSans-Bold.ttf
+          - DMMono-Regular.ttf
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: false
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.bayanmardon.PokerApp
+      SWIFT_VERSION: "5.9"
+      TARGETED_DEVICE_FAMILY: "1"
+      DEVELOPMENT_TEAM: ""
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
