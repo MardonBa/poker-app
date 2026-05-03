@@ -3,55 +3,43 @@ import SwiftUI
 struct ActionPanelView: View {
     @Bindable var state: GameState
 
-    @State private var panelHeight: CGFloat? = nil
-    @State private var isDragging = false
-    @State private var dragStartY: CGFloat = 0
-    @State private var dragStartH: CGFloat = 0
+    // Live offset so the panel follows the finger during drag
+    @GestureState private var handleDrag: CGFloat = 0
+    @GestureState private var bodyDrag: CGFloat = 0
 
-    private let minH: CGFloat = 68
-    private let openThreshold: CGFloat = 120
+    private var liveOffset: CGFloat {
+        let combined = handleDrag + bodyDrag
+        return state.panelOpen
+            ? max(0, min(100, combined))    // expanded → can only sink down
+            : min(0, max(-100, combined))   // collapsed → can only rise up
+    }
 
     var body: some View {
         VStack(spacing: 0) {
-            // Drag handle
+            HoleCardsRowView(state: state)
+
+            // Handle — full-width tap + drag target
             Capsule()
-                .fill(Color.white.opacity(isDragging ? 0.3 : 0.18))
+                .fill(Color.white.opacity(0.18))
                 .frame(width: 36, height: 4)
                 .padding(.top, 8)
-                .contentShape(Rectangle().size(CGSize(width: 200, height: 40)))
-                .onTapGesture {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                        if state.advice != nil && !state.advice!.loading {
-                            state.panelOpen.toggle()
-                            state.adviceCollapsed = !state.panelOpen
-                        } else {
-                            state.panelOpen.toggle()
-                        }
-                        panelHeight = nil
-                    }
-                }
+                .padding(.bottom, 8)
+                .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
+                .onTapGesture { toggle() }
                 .gesture(
-                    DragGesture(minimumDistance: 4)
-                        .onChanged { value in
-                            if !isDragging {
-                                isDragging = true
-                                dragStartY = value.startLocation.y
-                                dragStartH = panelHeight ?? minH
-                            }
-                            let dy = dragStartY - value.location.y
-                            let newH = max(minH, min(500, dragStartH + dy))
-                            panelHeight = newH
-                            state.panelOpen = newH > openThreshold
-                        }
-                        .onEnded { _ in
-                            isDragging = false
+                    DragGesture(minimumDistance: 8)
+                        .updating($handleDrag) { value, drag, _ in drag = value.translation.height }
+                        .onEnded { value in
+                            let velocity = value.predictedEndTranslation.height
+                            if velocity < -60, !state.panelOpen { expand() }
+                            else if velocity > 60, state.panelOpen { collapse() }
                         }
                 )
 
             if state.panelOpen {
                 FullPanelView(state: state)
             } else if state.adviceCollapsed, let adv = state.advice, !adv.loading {
-                // Advice ready mini bar
                 HStack(spacing: 10) {
                     Circle()
                         .fill(Color.accent)
@@ -61,35 +49,57 @@ struct ActionPanelView: View {
                         .font(.system(size: 12))
                         .foregroundColor(.appText2)
                     Spacer()
-                    Button("Show ↑") {
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                            state.panelOpen = true
-                            state.adviceCollapsed = false
-                            panelHeight = nil
-                        }
-                    }
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 9)
-                    .background(Color.accent)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    Button("Show ↑") { expand() }
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 9)
+                        .background(Color.accent)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 6)
                 .padding(.bottom, 12)
             } else {
-                // Default mini bar
                 MiniBarView(state: state)
             }
         }
+        .offset(y: liveOffset)
         .background(Color.appBg2)
         .overlay(Divider().background(Color.border), alignment: .top)
-        .if(panelHeight != nil) { v in
-            v.frame(height: panelHeight)
-                .clipped()
+        // When collapsed, the entire panel body is a swipe-up target
+        .if(!state.panelOpen) { v in
+            v.gesture(
+                DragGesture(minimumDistance: 8)
+                    .updating($bodyDrag) { value, drag, _ in drag = value.translation.height }
+                    .onEnded { value in
+                        guard value.predictedEndTranslation.height < -60 else { return }
+                        expand()
+                    }
+            )
         }
-        .animation(.spring(response: 0.35, dampingFraction: 0.8), value: state.panelOpen)
+        .animation(.spring(response: 0.3, dampingFraction: 0.78), value: state.panelOpen)
+    }
+
+    // MARK: - Actions
+
+    private func expand() {
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.78)) {
+            state.panelOpen = true
+        }
+    }
+
+    private func collapse() {
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.78)) {
+            state.panelOpen = false
+            if let adv = state.advice, !adv.loading {
+                state.adviceCollapsed = true
+            }
+        }
+    }
+
+    private func toggle() {
+        if state.panelOpen { collapse() } else { expand() }
     }
 }
 
@@ -105,16 +115,16 @@ private struct MiniBarView: View {
             MiniStat(label: "Odds", value: state.potOdds)
             Spacer()
             Button("Advice ↑") {
-                withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.78)) {
                     state.panelOpen = true
                 }
             }
             .font(.system(size: 12, weight: .semibold))
-            .foregroundColor(.white)
-            .padding(.horizontal, 14)
-            .padding(.vertical, 9)
-            .background(Color.accent)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+                .foregroundColor(.white)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 9)
+                .background(Color.accent)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
         }
         .padding(.horizontal, 16)
         .padding(.top, 6)
@@ -213,6 +223,14 @@ private struct FullPanelView: View {
             .padding(.horizontal, 16)
             .padding(.top, 10)
             .padding(.bottom, 16)
+        }
+        .scrollDismissesKeyboard(.immediately)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { dismissKeyboard() }
+                    .font(.system(size: 15, weight: .semibold))
+            }
         }
     }
 }
@@ -423,7 +441,7 @@ private struct AdviceSection: View {
                     }
 
                     Button("↓ collapse to table") {
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.78)) {
                             state.panelOpen = false
                             state.adviceCollapsed = true
                         }

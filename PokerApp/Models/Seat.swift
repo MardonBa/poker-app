@@ -53,9 +53,9 @@ func makeSeats(_ count: Int) -> [Seat] {
 }
 
 func tableDims(_ count: Int) -> CGSize {
-    if count <= 2 { return CGSize(width: 280, height: 180) }
-    if count <= 6 { return CGSize(width: 330, height: 210) }
-    return CGSize(width: 356, height: 230)
+    if count <= 2 { return CGSize(width: 300, height: 220) }
+    if count <= 6 { return CGSize(width: 350, height: 240) }
+    return CGSize(width: 356, height: 260)
 }
 
 func seatPos(_ i: Int, total: Int, size: CGSize) -> CGPoint {

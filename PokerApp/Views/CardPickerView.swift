@@ -50,11 +50,11 @@ struct CardPickerView: View {
                                     .font(.system(size: 10, weight: .medium))
                                     .foregroundColor(.appText3)
 
-                                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 3), count: 13), spacing: 3) {
+                                LazyVGrid(columns: [GridItem(.adaptive(minimum: CardSize.miniWidth), spacing: 3)], spacing: 3) {
                                     ForEach(PlayingCard.ranks, id: \.self) { rank in
                                         let card = PlayingCard(rank: rank, suit: suit.sym)
                                         let isUsed = used.contains(card.id)
-                                        PickCardCell(rank: rank, isRed: suit.red, isUsed: isUsed) {
+                                        PickCardCell(rank: rank, suit: suit.sym, isRed: suit.red, isUsed: isUsed) {
                                             if !isUsed { onPick(card) }
                                         }
                                     }
@@ -82,19 +82,21 @@ struct CardPickerView: View {
 
 private struct PickCardCell: View {
     let rank: String
+    let suit: String
     let isRed: Bool
     let isUsed: Bool
     let onTap: () -> Void
 
     var body: some View {
-        Text(rank)
-            .font(.system(size: 8, weight: .bold))
-            .foregroundColor(cellFg)
-            .frame(maxWidth: .infinity)
-            .aspectRatio(1/1.4, contentMode: .fit)
-            .background(cellBg)
-            .clipShape(RoundedRectangle(cornerRadius: 3))
-            .onTapGesture { onTap() }
+        VStack(spacing: 0) {
+            Text(rank).font(.system(size: 11, weight: .bold))
+            Text(suit).font(.system(size: 9))
+        }
+        .foregroundColor(cellFg)
+        .frame(width: CardSize.miniWidth, height: CardSize.miniHeight)
+        .background(cellBg)
+        .clipShape(RoundedRectangle(cornerRadius: 3))
+        .onTapGesture { onTap() }
     }
 
     private var cellBg: Color {

@@ -33,128 +33,126 @@ struct SessionModalView: View {
     }
 
     var body: some View {
-        ZStack {
-            Color.black.opacity(0.8).ignoresSafeArea()
-                .onTapGesture { if isEdit { onClose?() } }
+        NavigationStack {
+            ZStack {
+                Color.appBg.ignoresSafeArea()
 
-            ScrollView {
-                VStack(spacing: 16) {
-                    // Title
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(isEdit ? "Edit Session" : "New Session")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.appText)
-                                .tracking(-0.4)
-                            Text(isEdit ? "Changes apply immediately" : "Set up your game to get started")
-                                .font(.system(size: 12))
-                                .foregroundColor(.appText2)
-                        }
-                        Spacer()
-                        if isEdit {
-                            Button(action: { onClose?() }) {
-                                Image(systemName: "xmark")
+                ScrollView {
+                    VStack(spacing: 24) {
+                        // Header
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(isEdit ? "Edit Session" : "New Session")
+                                    .font(.system(size: 28, weight: .bold))
+                                    .foregroundColor(.appText)
+                                    .tracking(-0.5)
+                                Text(isEdit ? "Changes apply immediately" : "Set up your game to get started")
                                     .font(.system(size: 14))
                                     .foregroundColor(.appText2)
-                                    .frame(width: 28, height: 28)
-                                    .background(Color.white.opacity(0.07))
-                                    .clipShape(Circle())
                             }
-                        }
-                    }
-
-                    // Blinds
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 2) {
-                            FieldLabel("Blinds")
-                            Text("*").foregroundColor(.appRed).font(.system(size: 10))
-                        }
-                        HStack(spacing: 8) {
-                            TextField("SB", text: $sb)
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(DarkFieldStyle())
-                                .frame(width: 80)
-                            Text("/")
-                                .font(.system(size: 16))
-                                .foregroundColor(.appText3)
-                            TextField("BB", text: $bb)
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(DarkFieldStyle())
-                                .frame(width: 80)
-                        }
-                    }
-
-                    // More options toggle
-                    Button(action: { withAnimation(.easeInOut(duration: 0.2)) { showMore.toggle() } }) {
-                        HStack(spacing: 4) {
-                            Text(showMore ? "▼" : "▶").font(.system(size: 12))
-                            Text(showMore ? "Hide options" : "More options").font(.system(size: 11))
-                        }
-                        .foregroundColor(.appText3)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                    if showMore {
-                        VStack(spacing: 12) {
-                            // Format
-                            VStack(alignment: .leading, spacing: 4) {
-                                FieldLabel("Format")
-                                SegControl(options: ["Cash","Tournament"], selected: $format)
-                            }
-
-                            // Table size
-                            VStack(alignment: .leading, spacing: 4) {
-                                FieldLabel("Table size")
-                                SegControl(options: ["2","6","9"], labels: ["2 players","6 players","9 players"], selected: $players)
-                            }
-
-                            // Ante
-                            VStack(alignment: .leading, spacing: 4) {
-                                FieldLabel("Ante structure")
-                                SegControl(options: ["None","Standard","BB ante","Btn ante"], selected: $ante, fontSize: 10)
-                            }
-
-                            // Buy-in
-                            VStack(alignment: .leading, spacing: 4) {
-                                FieldLabel("Buy-in (for P&L tracking, optional)")
-                                TextField("$200", text: $buyin)
-                                    .keyboardType(.decimalPad)
-                                    .textFieldStyle(DarkFieldStyle())
-                            }
-
-                            // Special rules
-                            VStack(alignment: .leading, spacing: 4) {
-                                FieldLabel("Special rules")
-                                HStack(spacing: 6) {
-                                    ToggleSegBtn(label: "Straddle", active: $straddle)
-                                    ToggleSegBtn(label: "Bomb pot", active: $bombPot)
+                            Spacer()
+                            if isEdit {
+                                Button(action: { onClose?() }) {
+                                    Image(systemName: "xmark")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.appText2)
+                                        .frame(width: 32, height: 32)
+                                        .background(Color.white.opacity(0.07))
+                                        .clipShape(Circle())
                                 }
                             }
                         }
-                        .transition(.opacity.combined(with: .move(edge: .top)))
-                    }
+                        .padding(.top, 12)
 
-                    // CTA
-                    Button(action: {
-                        onSave(GameSettings(sb: sb, bb: bb, format: format, players: players, ante: ante, buyin: buyin, straddle: straddle, bombPot: bombPot))
-                    }) {
-                        Text(isEdit ? "Save Changes →" : "Start Session →")
-                            .font(.system(size: 15, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 15)
-                            .background(Color.accent)
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                        // Blinds
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack(spacing: 2) {
+                                FieldLabel("Blinds")
+                                Text("*").foregroundColor(.appRed).font(.system(size: 10))
+                            }
+                            HStack(spacing: 8) {
+                                TextField("SB", text: $sb)
+                                    .keyboardType(.decimalPad)
+                                    .textFieldStyle(DarkFieldStyle())
+                                    .frame(width: 90)
+                                Text("/")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(.appText3)
+                                TextField("BB", text: $bb)
+                                    .keyboardType(.decimalPad)
+                                    .textFieldStyle(DarkFieldStyle())
+                                    .frame(width: 90)
+                            }
+                        }
+
+                        // More options toggle
+                        Button(action: { withAnimation(.easeInOut(duration: 0.2)) { showMore.toggle() } }) {
+                            HStack(spacing: 4) {
+                                Text(showMore ? "▼" : "▶").font(.system(size: 12))
+                                Text(showMore ? "Hide options" : "More options").font(.system(size: 11))
+                            }
+                            .foregroundColor(.appText3)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                        if showMore {
+                            VStack(spacing: 18) {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    FieldLabel("Format")
+                                    SegControl(options: ["Cash","Tournament"], selected: $format)
+                                }
+                                VStack(alignment: .leading, spacing: 6) {
+                                    FieldLabel("Table size")
+                                    SegControl(options: ["2","6","9"], labels: ["2 players","6 players","9 players"], selected: $players)
+                                }
+                                VStack(alignment: .leading, spacing: 6) {
+                                    FieldLabel("Ante structure")
+                                    SegControl(options: ["None","Standard","BB ante","Btn ante"], selected: $ante, fontSize: 10)
+                                }
+                                VStack(alignment: .leading, spacing: 6) {
+                                    FieldLabel("Buy-in (for P&L tracking, optional)")
+                                    TextField("$200", text: $buyin)
+                                        .keyboardType(.decimalPad)
+                                        .textFieldStyle(DarkFieldStyle())
+                                }
+                                VStack(alignment: .leading, spacing: 6) {
+                                    FieldLabel("Special rules")
+                                    HStack(spacing: 6) {
+                                        ToggleSegBtn(label: "Straddle", active: $straddle)
+                                        ToggleSegBtn(label: "Bomb pot", active: $bombPot)
+                                    }
+                                }
+                            }
+                            .transition(.opacity.combined(with: .move(edge: .top)))
+                        }
+
+                        Button(action: {
+                            onSave(GameSettings(sb: sb, bb: bb, format: format, players: players, ante: ante, buyin: buyin, straddle: straddle, bombPot: bombPot))
+                        }) {
+                            Text(isEdit ? "Save Changes →" : "Start Session →")
+                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .background(Color.accent)
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
+                        }
+                        .buttonStyle(ScaleButtonStyle())
+                        .padding(.top, 4)
                     }
-                    .buttonStyle(ScaleButtonStyle())
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 48)
                 }
-                .padding(24)
+                .scrollDismissesKeyboard(.immediately)
             }
-            .background(Color.appBg2)
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Color.border2, lineWidth: 1))
-            .padding(.horizontal, 20)
-            .frame(maxHeight: UIScreen.main.bounds.height * 0.9)
+            .toolbar(.hidden, for: .navigationBar)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") { dismissKeyboard() }
+                        .font(.system(size: 15, weight: .semibold))
+                }
+            }
         }
     }
 }
@@ -207,4 +205,8 @@ struct ToggleSegBtn: View {
         .background(Color.appBg3)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
+}
+
+func dismissKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }

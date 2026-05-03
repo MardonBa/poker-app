@@ -186,7 +186,7 @@ struct OpponentSheetView: View {
                                             Button("+") { showCardPicker = true }
                                                 .font(.system(size: 11, weight: .medium))
                                                 .foregroundColor(.appText2)
-                                                .frame(width: 28, height: 38)
+                                                .frame(width: CardSize.addCardWidth, height: CardSize.addCardHeight)
                                                 .background(Color.appBg3)
                                                 .clipShape(RoundedRectangle(cornerRadius: 7))
                                         }
@@ -289,6 +289,14 @@ struct OpponentSheetView: View {
                     .padding(.horizontal, 16)
                     .padding(.vertical, 12)
                     .padding(.bottom, 24)
+                }
+                .scrollDismissesKeyboard(.immediately)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") { dismissKeyboard() }
+                            .font(.system(size: 15, weight: .semibold))
+                    }
                 }
             }
             .background(Color.appBg2)

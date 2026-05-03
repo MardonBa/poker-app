@@ -101,7 +101,7 @@ private struct TableCenterView: View {
                         Text("\(c.rank)\(c.suit)")
                             .font(.system(size: 6))
                             .foregroundColor(c.isRed ? Color(hex: "f99999") : Color.white.opacity(0.3))
-                            .frame(width: 16, height: 22)
+                            .frame(width: CardSize.ghostWidth, height: CardSize.ghostHeight)
                             .background(Color.white.opacity(0.04))
                             .clipShape(RoundedRectangle(cornerRadius: 3))
                             .overlay(RoundedRectangle(cornerRadius: 3).stroke(Color.white.opacity(0.2), style: StrokeStyle(lineWidth: 1, dash: [3])))
@@ -135,17 +135,21 @@ struct MiniCardView: View {
                     Text(c.suit).font(.system(size: 9))
                 }
                 .foregroundColor(c.isRed ? Color(hex: "c0392b") : Color(hex: "1a1a1a"))
-                .background(Color.cardBg)
             } else {
                 Text("+")
                     .font(.system(size: 10))
                     .foregroundColor(Color.white.opacity(0.15))
-                    .background(Color.white.opacity(0.04))
-                    .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.white.opacity(0.12), style: StrokeStyle(lineWidth: 1.5, dash: [3])))
             }
         }
-        .frame(width: 28, height: 40)
+        .frame(width: CardSize.miniWidth, height: CardSize.miniHeight)
+        .background(card != nil ? Color.cardBg : Color.white.opacity(0.04))
         .clipShape(RoundedRectangle(cornerRadius: 4))
+        .overlay {
+            if card == nil {
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.white.opacity(0.12), style: StrokeStyle(lineWidth: 1.5, dash: [3]))
+            }
+        }
         .shadow(color: .black.opacity(0.4), radius: 3, y: 2)
     }
 }

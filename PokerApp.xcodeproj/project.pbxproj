@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		B4D8C4953D2D7926BEFDAB73 /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD1262FF9ACC0BA242752CC /* Seat.swift */; };
 		B6C462A4272EE09C0F0508B6 /* HoleCardsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468D0605DDB8EC379915DB9 /* HoleCardsRowView.swift */; };
 		C154F00508714943859569EB /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 963975592EC3542C68E826B7 /* DMSans-Regular.ttf */; };
+		C7D8E9F0A1B2C3D4E5F6A7B8 /* CardSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C9D0E1F2A3B4C5D6E7F8A9 /* CardSizes.swift */; };
 		D53A060769BE5C6887EF706F /* OpponentSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB841E6F3CF5ACB0E48AA /* OpponentSheetView.swift */; };
 		D5B253315460A2CAFB6C555C /* DMMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA41295047DB0600E0D49A38 /* DMMono-Regular.ttf */; };
 		DAFAFEEFE23DA42F9B7B013C /* AdviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0148B24B1C75304FB852A3A1 /* AdviceState.swift */; };
@@ -36,28 +37,29 @@
 		0148B24B1C75304FB852A3A1 /* AdviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdviceState.swift; sourceTree = "<group>"; };
 		3EA909F140F36BE4EBC10677 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5FD283E8541D2F672518BCCE /* ActionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPanelView.swift; sourceTree = "<group>"; };
-		66EDB4E3006C3DABB495DE15 /* PokerApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PokerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66EDB4E3006C3DABB495DE15 /* PokerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFC8BD4D5B43C06E2F420C2 /* SessionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModalView.swift; sourceTree = "<group>"; };
 		73417AE250830BB71FEC0D9D /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		7FD7629F65FBB520BE995931 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		863614B389BA9C0343F53221 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		963975592EC3542C68E826B7 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		963975592EC3542C68E826B7 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		9CA95C56F54939BDCCB7BCBD /* PokerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerApp.swift; sourceTree = "<group>"; };
 		A468D0605DDB8EC379915DB9 /* HoleCardsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleCardsRowView.swift; sourceTree = "<group>"; };
 		AD91603DAFDF542E399DC818 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
 		B14F363BD298703CE648640A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B8C9D0E1F2A3B4C5D6E7F8A9 /* CardSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSizes.swift; sourceTree = "<group>"; };
 		BC3A4F0ED87505C56413C73A /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		BE166829342771AE41606D32 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		C5E34170E6528EDE47FF05AD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CA0B04F104F0C1CE0B7D7827 /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeService.swift; sourceTree = "<group>"; };
 		CA41295047DB0600E0D49A38 /* DMMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMMono-Regular.ttf"; sourceTree = "<group>"; };
 		CE8DB841E6F3CF5ACB0E48AA /* OpponentSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentSheetView.swift; sourceTree = "<group>"; };
-		D756B3AAAD27219C1209926A /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
-		DA32DF567DEA21424EA5D299 /* DMSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		D756B3AAAD27219C1209926A /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		DA32DF567DEA21424EA5D299 /* DMSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		DFD1262FF9ACC0BA242752CC /* Seat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seat.swift; sourceTree = "<group>"; };
 		E30DDF70A4738BD860DDDE34 /* SeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatView.swift; sourceTree = "<group>"; };
 		E3D9AFE7E819865954987987 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		E869744B1FAE9B1F7D815031 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		E869744B1FAE9B1F7D815031 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -87,6 +89,7 @@
 		555E7E39FB39E77209D4C564 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				B8C9D0E1F2A3B4C5D6E7F8A9 /* CardSizes.swift */,
 				3EA909F140F36BE4EBC10677 /* Colors.swift */,
 				7FD7629F65FBB520BE995931 /* Typography.swift */,
 			);
@@ -201,11 +204,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
-				TargetAttributes = {
-					7E5F560DDB509A9279128DA4 = {
-						DevelopmentTeam = "";
-					};
-				};
 			};
 			buildConfigurationList = 69A7D78CD499ECC96399184A /* Build configuration list for PBXProject "PokerApp" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -217,7 +215,6 @@
 			);
 			mainGroup = C48FC78CACADDA0CA31CD059;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -247,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2865949FFF96CDECE795396F /* ActionPanelView.swift in Sources */,
+				C7D8E9F0A1B2C3D4E5F6A7B8 /* CardSizes.swift in Sources */,
 				DAFAFEEFE23DA42F9B7B013C /* AdviceState.swift in Sources */,
 				635C05243724CB68C43DE49B /* Card.swift in Sources */,
 				3DFE8C52EBEB09A324B84112 /* CardPickerView.swift in Sources */,
@@ -338,7 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QLQ3JW38X3;
 				INFOPLIST_FILE = PokerApp/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QLQ3JW38X3;
 				INFOPLIST_FILE = PokerApp/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

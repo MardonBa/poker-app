@@ -11,7 +11,6 @@ struct MainView: View {
                 VStack(spacing: 0) {
                     HeaderView(state: state)
 
-                    // Table area
                     Spacer(minLength: 0)
                     HStack {
                         Spacer()
@@ -22,14 +21,9 @@ struct MainView: View {
                     .padding(.vertical, 16)
                     Spacer(minLength: 0)
 
-                    // Hole cards row
-                    HoleCardsRowView(state: state)
-
-                    // Action panel
                     ActionPanelView(state: state)
                 }
 
-                // Overlays
                 if let target = state.pickerTarget {
                     CardPickerView(
                         used: state.usedCards,
@@ -50,29 +44,28 @@ struct MainView: View {
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .zIndex(20)
                 }
-
-                if state.settings == nil {
-                    SessionModalView(existing: nil, onSave: { s in
-                        state.startSession(s)
-                    }, onClose: nil)
-                    .transition(.opacity)
-                    .zIndex(30)
-                }
-
-                if state.editingSession {
-                    SessionModalView(existing: state.settings, onSave: { s in
-                        state.saveSession(s)
-                    }, onClose: {
-                        state.editingSession = false
-                    })
-                    .transition(.opacity)
-                    .zIndex(30)
-                }
             }
             .animation(.easeInOut(duration: 0.2), value: state.pickerTarget != nil)
             .animation(.easeInOut(duration: 0.2), value: state.openSeatId != nil)
-            .animation(.easeInOut(duration: 0.2), value: state.settings == nil)
-            .animation(.easeInOut(duration: 0.2), value: state.editingSession)
+            .fullScreenCover(isPresented: Binding(
+                get: { state.settings == nil },
+                set: { _ in }
+            )) {
+                SessionModalView(existing: nil, onSave: { s in
+                    state.startSession(s)
+                }, onClose: nil)
+                .interactiveDismissDisabled(true)
+            }
+            .fullScreenCover(isPresented: Binding(
+                get: { state.editingSession },
+                set: { state.editingSession = $0 }
+            )) {
+                SessionModalView(existing: state.settings, onSave: { s in
+                    state.saveSession(s)
+                }, onClose: {
+                    state.editingSession = false
+                })
+            }
         }
     }
 }

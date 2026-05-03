@@ -47,17 +47,21 @@ struct HoleCardView: View {
                     Text(c.suit).font(.system(size: 12, weight: .bold))
                 }
                 .foregroundColor(c.isRed ? Color(hex: "c0392b") : Color(hex: "1a1a1a"))
-                .background(Color.cardBg)
             } else {
                 Text("tap")
                     .font(.system(size: 10))
                     .foregroundColor(Color.white.opacity(0.2))
-                    .background(Color.white.opacity(0.04))
-                    .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color.white.opacity(0.1), style: StrokeStyle(lineWidth: 1.5, dash: [3])))
             }
         }
-        .frame(width: 42, height: 58)
+        .frame(width: CardSize.holeWidth, height: CardSize.holeHeight)
+        .background(card != nil ? Color.cardBg : Color.white.opacity(0.04))
         .clipShape(RoundedRectangle(cornerRadius: 6))
+        .overlay {
+            if card == nil {
+                RoundedRectangle(cornerRadius: 6)
+                    .stroke(Color.white.opacity(0.1), style: StrokeStyle(lineWidth: 1.5, dash: [3]))
+            }
+        }
         .shadow(color: .black.opacity(0.5), radius: 6, y: 4)
     }
 }
